@@ -1,6 +1,6 @@
 streamlit 
 pandas
 numpy
-scikit-lean
+scikit-learn
 japanize_matplotlib  # 日本語対応
 matplotlib
