@@ -7,8 +7,16 @@ import japanize_matplotlib  # 日本語対応
 from sklearn.preprocessing import MinMaxScaler
 
 # データの読み込み
-pokemon_df = pd.read_csv('C:\\Users\\hiray\\Downloads\\pokemon_eng2.txt', delimiter=',', encoding='utf-8')
+import os
 
+# 現在のスクリプトのディレクトリを取得
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# ファイルへの相対パスを作成
+file_path = os.path.join(current_dir, 'pokemon_eng2.txt')
+
+# pandasでCSVファイルを読み込む
+pokemon_df = pd.read_csv(file_path, delimiter=',', encoding='utf-8')
 
 
 type_mapping = {
@@ -71,7 +79,7 @@ _, indices = knn_model.kneighbors(user_input_scaled)
 similar_pokemon = pokemon_df.iloc[indices[0]]
 
 # 結果の表示
-st.header('入力ステータスに近いポケモン')
+
 for _, row in similar_pokemon.iterrows():
     # ポケモン名とタイプを一緒に表示
     st.subheader(f"{row['name']} - タイプ: {reverse_type_mapping[row['type']]}")
