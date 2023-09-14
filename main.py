@@ -38,8 +38,11 @@ reverse_type_mapping = {v: k for k, v in type_mapping.items()}
 selected_columns = ['HP', 'Attack', 'Defense', 'Special Attack', 'Special Defense', 'Speed']
 
 # データのスケーリング
+# データのスケーリング
 scaler = MinMaxScaler()
-pokemon_scaled = scaler.fit_transform(pokemon_df[selected_columns])
+scaler.fit(pokemon_df[selected_columns])
+scaler.feature_names_in_ = None
+pokemon_scaled = scaler.transform(pokemon_df[selected_columns])
 
 # KNNモデルの訓練
 knn_model = NearestNeighbors(n_neighbors=5)
