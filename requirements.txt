@@ -3,3 +3,4 @@ pandas
 numpy
 scikit-lean
 japanize_matplotlib  # 日本語対応
+matplotlib

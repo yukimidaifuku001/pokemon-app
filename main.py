@@ -7,7 +7,9 @@ import japanize_matplotlib  # 日本語対応
 from sklearn.preprocessing import MinMaxScaler
 
 # データの読み込み
-pokemon_df = pd.read_csv('pokemon_eng2.txt', delimiter=',', encoding='utf-8')
+pokemon_df = pd.read_csv('C:\\Users\\hiray\\Downloads\\pokemon_eng2.txt', delimiter=',', encoding='utf-8')
+
+
 
 type_mapping = {
     'くさ': 1,
